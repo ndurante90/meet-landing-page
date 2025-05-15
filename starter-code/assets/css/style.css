@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root{
@@ -27,11 +26,11 @@ body{
 }
 
 button {
-  all: unset; 
+  all: unset;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   text-align: center;
   font: inherit;
   color: inherit;
@@ -41,6 +40,7 @@ button {
   border-radius: 29px;
   margin: 0;
   line-height: 1;
+  transition: background-color 0.3s ease;
 }
 
 button:focus-visible {
@@ -53,6 +53,8 @@ button:focus-visible {
     display: flex;
     justify-content: center;
 }
+
+/* HEADER SECTION */
 
 .banner .sfondo{
     background-image: url('../mobile/image-hero.png');
@@ -75,8 +77,8 @@ button:focus-visible {
 }
 
 .banner > .claim > p{
-    margin-top: 28px;
-    margin-bottom: 26px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 .banner > .claim > button#download-btn{
@@ -84,9 +86,20 @@ button:focus-visible {
     margin-bottom: 16px;
 }
 
+.banner > .claim > button#download-btn:hover{
+  background-color: #71C0D4;
+}
+
+
 .banner > .claim > button#about-btn{
     background-color: var(--purple-600);
 }
+
+.banner > .claim > button#about-btn:hover{
+    background-color: #B18BDD;
+}
+
+/* PHOTOS SECTION */
 
 .main{
     margin-top: 32px;
@@ -116,21 +129,22 @@ button:focus-visible {
    color: var(--slate-600) !important;
    border: 1px solid #D1D1DF;
    width: 56px;
-   padding: 16px 19px;
+   height: 56px;
+   padding: 16px;
    border-radius: 999px;
-   text-emphasis: center;
+   text-align: center;
 }
 
   .main-content-wrapper{
-        margin-left: 44px;
-        margin-right:  44px;
+        margin-left: 32px;
+        margin-right:  32px;
     }
 
 .main-content-wrapper .photos{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 64px;
 }
 
@@ -162,8 +176,9 @@ button:focus-visible {
     width: 100%;
     height: 100%;
     object-fit: cover;
-       border: 1px solid #979797;
-   border-radius: 20px;
+ 
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .built-for-banner{
@@ -179,6 +194,8 @@ button:focus-visible {
 .built-for-banner p{
     margin-top: 32px;
 }
+
+/* FOOTER SECTION */
 
 .banner-footer{
     background-image: url(../mobile/image-footer.jpg);
@@ -210,18 +227,27 @@ button:focus-visible {
     width: 311px;
 }
 
-.banner-footer > div.wrapper > h2{
+.banner-footer > div.wrapper > div >  h2{
     color: var(--white);
     margin-bottom: 24px;
 }
 
-.banner-footer p {
+.banner-footer > div.wrapper > div > p {
     color: var(--white);
     margin-bottom: 24px;
 }
 
 .banner-footer button#download2-btn{
     background-color: var(--purple-600);
+}
+
+.banner-footer button#download2-btn:hover{
+    background-color: #B18BDD;
+}
+
+#download-btn .version{
+    color: var(--cyan-300);
+    margin-left: 5px;
 }
 
 #download2-btn .version{
@@ -245,6 +271,7 @@ footer .decoration-number .wrapper .number{
 }
 
 
+/* GENERAL CLASSES FOR TEXT */
 
 .text-preset1{
     font-size: 2.5rem;
@@ -276,7 +303,7 @@ footer .decoration-number .wrapper .number{
     font-weight: var(--font-medium);
 }
 
- .text-preset5{
+.text-preset5{
     font-size: 1rem;
     font-weight: var(--font-black);
     line-height: 150%;
@@ -292,52 +319,79 @@ footer .decoration-number .wrapper .number{
 
     .banner .sfondo{
        background-image: url('../tablet/image-hero.png');
-   }
+       background-size: contain;
+       margin-top: 64px;
+   
+    }
 
-
+    .banner > .claim > p{
+       margin-left: 10px;
+    }
+   
+    .main-content-wrapper{
+        margin-left: 44px;
+        margin-right:  44px;
+    }
 
     .main-content-wrapper .photos{
        grid-template-columns: repeat(4, 1fr);
        grid-template-rows: repeat(1, auto);
+       gap: 24px;
+    }
+    
+    .main-content-wrapper .photos > div{
+        width: 100%;
     }
 
-.main-content-wrapper .photos > div{
-   width: 100%;
-}
+    .main-content-wrapper .photos > .first{
+        grid-row: 1;
+        grid-column: 1;
+    }
 
-.main-content-wrapper .photos > .first{
-    grid-row: 1;
-    grid-column: 1;
-}
+    .main-content-wrapper .photos > .second{
+        grid-row: 1;
+        grid-column: 2;
+    }
 
-.main-content-wrapper .photos > .second{
-    grid-row: 1;
-    grid-column: 2;
-}
+    .main-content-wrapper .photos > .third{
+        grid-row: 1;
+        grid-column: 3;
+    }
 
-.main-content-wrapper .photos > .third{
-    grid-row: 1;
-    grid-column: 3;
-}
+    .main-content-wrapper .photos > .fourth{
+        grid-row: 1;
+        grid-column: 4;
+    }
 
-.main-content-wrapper .photos > .fourth{
-    grid-row: 1;
-    grid-column: 4;
-}
+    .built-for-banner{
+        width: 544px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
 
-.built-for-banner{
-    width: 504px;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .built-for-banner > div{
+        width: 415px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
- .banner-footer{
+    .built-for-banner > p{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .banner-footer{
         background-image: url(../tablet/image-footer.jpg);
     }
 
-.banner-footer > div.wrapper{
-    width: 504px;
-}
+    .banner-footer > div.wrapper{
+        width: 504px;
+    }
+
+    .banner > .claim > button#download-btn{
+        margin-right: 17px;
+    }
 
     .text-preset1{
         font-size: 3rem;
@@ -348,7 +402,7 @@ footer .decoration-number .wrapper .number{
     }
     
     .text-preset3{
-       font-size: 0.875rem;
+        font-size: 0.875rem;
     }
 }
 
@@ -365,35 +419,38 @@ footer .decoration-number .wrapper .number{
        font-size: 1rem;
     }
 
-     .text-preset4{ 
+    .text-preset4{ 
        font-size: 1.125rem;
     }
 
     .banner{
         display: flex;
+        margin-bottom: 64px;
+      
     }
 
     .banner .sfondo{
         background-image: url('../desktop/image-hero-left.png');
-        height: 20vw;
+        height: 303px;
         width: 394px;
         background-size: contain;
+        margin-top: 64px;
     }
 
     .banner .sfondo2{
         background-image: url('../desktop/image-hero-right.png');
         background-repeat: no-repeat;
-        height: 20vw;
+        height: 303px;
         width: 394px;
         background-size: contain; 
-        margin-top: 64px;
+        margin-top: 121px;
     }
 
     .banner .claim{
         width: 448px;
         padding-left: 0;
         padding-right: 0;
-        margin-top: 87px;
+        padding-top: 23px;
     }
 
     .main-content-wrapper{
@@ -414,17 +471,27 @@ footer .decoration-number .wrapper .number{
        height: 100%;
     }
 
-      .banner-footer > div.wrapper > h2{
+    .main-content-wrapper .photos{
+       gap: 32px;
+    }
+
+    .banner-footer > div.wrapper > div{
+         height: 88px;
+    }
+
+
+    .banner-footer > div.wrapper > div > h2{
         width: 445px;
     }
 
-      .banner-footer > div.wrapper > p{
-        width: 355px;
+    .banner-footer > div.wrapper > div.par {
+        width: 445px;
         text-align: unset;
     }
-
-    .banner-footer > div.wrapper > button{
-        width: 193px;
+   
+    .banner-footer > div.wrapper > div.par > p {
+        padding-right: 80px;
+        text-align: unset;
     }
 
     .banner-footer{
